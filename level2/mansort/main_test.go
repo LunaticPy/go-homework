@@ -68,6 +68,14 @@ func TestSort(t *testing.T) {
 			},
 		},
 		{
+			Name: "month",
+			In:   "content/month.txt",
+			Out:  "test/month.txt",
+			Atr: map[string]interface{}{
+				"mnth": true,
+			},
+		},
+		{
 			Name: "column",
 			In:   "content/col.txt",
 			Out:  "test/col.txt",

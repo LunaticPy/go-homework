@@ -8,7 +8,6 @@ import (
 	"sort"
 	"strconv"
 	"strings"
-	"time"
 
 	"github.com/facette/natsort" // natural sorting
 )
@@ -105,31 +104,17 @@ func MySort(content []byte) []string {
 		}
 	}
 	if mnth {
-		layout := "Mon Jan 2 15:04:05 MST 2006"
-		nums := make([]int, 0, len(rez))
-		for k := range rez {
-			n, err := time.Parse(rez[k], layout)
-			if err != nil {
-				fmt.Println("error sort numeric:", err)
-				os.Exit(1)
-			}
-			nums = append(nums, int(n.Month()))
+		sF := func(i, j int) bool {
+			return getMonth(rez[i]) < getMonth(rez[j])
 		}
-		if c {
-			if !sort.IntsAreSorted(nums) {
-				return []string{"Need to sort"}
-			} else {
-				return []string{"No need to sort"}
-			}
+		rsF := func(i, j int) bool {
+			return getMonth(rez[i]) > getMonth(rez[j])
 		}
+
 		if reverse {
-			sort.Sort(sort.Reverse(sort.IntSlice(nums)))
+			sort.SliceStable(rez, rsF)
 		} else {
-			sort.Ints(nums)
-		}
-		rez = make([]string, 0, len(nums))
-		for _, n := range nums {
-			rez = append(rez, strconv.Itoa(n))
+			sort.SliceStable(rez, sF)
 		}
 	}
 
