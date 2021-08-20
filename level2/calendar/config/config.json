@@ -1,0 +1,7 @@
+{
+    "server":{
+        "Addr": ":8080",
+        "ReadTimeout": "5s",
+        "WriteTimeout": "5s"
+    }
+}
