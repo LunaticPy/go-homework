@@ -1,4 +1,4 @@
-package main
+package pattern
 
 import "fmt"
 
@@ -82,17 +82,17 @@ func getGun(gunType string) (iGun, error) {
 	return nil, fmt.Errorf("Wrong gun type passed")
 }
 
-func main() {
-	ak47, _ := getGun("ak47")
-	musket, _ := getGun("musket")
+// func main() {
+// 	ak47, _ := getGun("ak47")
+// 	musket, _ := getGun("musket")
 
-	printDetails(ak47)
-	printDetails(musket)
-}
+// 	printDetails(ak47)
+// 	printDetails(musket)
+// }
 
-func printDetails(g iGun) {
-	fmt.Printf("Gun: %s", g.getName())
-	fmt.Println()
-	fmt.Printf("Power: %d", g.getPower())
-	fmt.Println()
-}
+// func printDetails(g iGun) {
+// 	fmt.Printf("Gun: %s", g.getName())
+// 	fmt.Println()
+// 	fmt.Printf("Power: %d", g.getPower())
+// 	fmt.Println()
+// }

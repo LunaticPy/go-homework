@@ -1,4 +1,4 @@
-package main
+package pattern
 
 import "fmt"
 
@@ -74,24 +74,24 @@ func (t *tv) off() {
 
 //===================================
 
-func main() {
-	tv := &tv{}
+// func main() {
+// 	tv := &tv{}
 
-	onCommand := &onCommand{
-		device: tv,
-	}
+// 	onCommand := &onCommand{
+// 		device: tv,
+// 	}
 
-	offCommand := &offCommand{
-		device: tv,
-	}
+// 	offCommand := &offCommand{
+// 		device: tv,
+// 	}
 
-	onButton := &button{
-		command: onCommand,
-	}
-	onButton.press()
+// 	onButton := &button{
+// 		command: onCommand,
+// 	}
+// 	onButton.press()
 
-	offButton := &button{
-		command: offCommand,
-	}
-	offButton.press()
-}
+// 	offButton := &button{
+// 		command: offCommand,
+// 	}
+// 	offButton.press()
+// }

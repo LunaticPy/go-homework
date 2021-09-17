@@ -1,4 +1,4 @@
-package main
+package pattern
 
 import "fmt"
 
@@ -67,15 +67,15 @@ func (a *areaCalculator) visitForCircle(s *circle) {
 	fmt.Println("Calculating area for circle")
 }
 
-func main() {
-	square := &square{side: 2}
-	circle := &circle{radius: 3}
+// func main() {
+// 	square := &square{side: 2}
+// 	circle := &circle{radius: 3}
 
-	areaCalculator := &areaCalculator{}
+// 	areaCalculator := &areaCalculator{}
 
-	square.accept(areaCalculator)
-	circle.accept(areaCalculator)
+// 	square.accept(areaCalculator)
+// 	circle.accept(areaCalculator)
 
-	fmt.Println()
+// 	fmt.Println()
 
-}
+// }

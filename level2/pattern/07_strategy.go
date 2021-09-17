@@ -1,4 +1,4 @@
-package main
+package pattern
 
 import "fmt"
 
@@ -88,23 +88,23 @@ func (c *cache) evict() {
 	c.capacity--
 }
 
-func main() {
-	lfu := &lfu{}
-	cache := initCache(lfu)
+// func main() {
+// 	lfu := &lfu{}
+// 	cache := initCache(lfu)
 
-	cache.add("a", "1")
-	cache.add("b", "2")
+// 	cache.add("a", "1")
+// 	cache.add("b", "2")
 
-	cache.add("c", "3")
+// 	cache.add("c", "3")
 
-	lru := &lru{}
-	cache.setEvictionAlgo(lru)
+// 	lru := &lru{}
+// 	cache.setEvictionAlgo(lru)
 
-	cache.add("d", "4")
+// 	cache.add("d", "4")
 
-	fifo := &fifo{}
-	cache.setEvictionAlgo(fifo)
+// 	fifo := &fifo{}
+// 	cache.setEvictionAlgo(fifo)
 
-	cache.add("e", "5")
+// 	cache.add("e", "5")
 
-}
+// }
